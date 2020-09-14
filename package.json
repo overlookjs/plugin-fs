@@ -1,6 +1,6 @@
 {
   "name": "@overlook/plugin-fs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Overlook framework file system plugin",
   "main": "index.js",
   "module": "es/index.js",
