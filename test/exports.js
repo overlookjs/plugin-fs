@@ -11,15 +11,15 @@
 // Exports
 
 module.exports = function itExports(fsPlugin) {
-	describe.skip('methods', () => { // eslint-disable-line jest/no-disabled-tests
+	describe('methods', () => {
 		it.each([
-			'TEMP'
+			'File'
 		])('%s', (key) => {
 			expect(fsPlugin[key]).toBeFunction();
 		});
 	});
 
-	describe('symbols', () => {
+	describe.skip('symbols', () => { // eslint-disable-line jest/no-disabled-tests
 		it.each([
 			'TEMP'
 		])('%s', (key) => {

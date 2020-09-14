@@ -10,5 +10,5 @@ import fsPlugin from '../lib/index.js';
 
 export default fsPlugin;
 export const {
-	TEMP
+	File
 } = fsPlugin;
