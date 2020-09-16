@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.0
+
+Features:
+
+* Methods
+
 ## 0.0.2
 
 Improvements:
