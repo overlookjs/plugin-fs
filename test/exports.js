@@ -11,7 +11,7 @@
 // Exports
 
 module.exports = function itExports(fsPlugin) {
-	describe('methods', () => {
+	describe('properties', () => {
 		it.each([
 			'File'
 		])('%s', (key) => {
@@ -19,9 +19,13 @@ module.exports = function itExports(fsPlugin) {
 		});
 	});
 
-	describe.skip('symbols', () => { // eslint-disable-line jest/no-disabled-tests
+	describe('symbols', () => {
 		it.each([
-			'TEMP'
+			'GET_FILE_PATH',
+			'READ_FILE',
+			'WRITE_FILE',
+			'CREATE_VIRTUAL_PATH',
+			'FS_FILES'
 		])('%s', (key) => {
 			expect(typeof fsPlugin[key]).toBe('symbol');
 		});

@@ -11,7 +11,57 @@ Part of the [Overlook framework](https://overlookjs.github.io/).
 
 ## Usage
 
-This module is under development and not ready for use yet.
+Plugin for access to file system and virtual file system.
+
+### `File` class
+
+Represents a file (either on real file system or virtual file system).
+
+Has properties `.path` and `.content`.
+
+For files on real filesystem:
+
+* `.path` contains absolute path to the file (using system's path separators i.e. `/` on POSIX, `\` on Windows)
+* `.content` is `undefined`.
+
+For virtual files created with `[WRITE_FILE]()`:
+
+* `.path` is a pseudo-path - guaranteed to be unique (always using POSIX-style path separators)
+* `.content` is content of the virtual file (string)
+
+### Methods
+
+#### `[GET_FILE_PATH]( file )`
+
+Get absolute path for a file.
+
+Method can be extended in Route classes/plugins.
+
+#### `[READ_FILE]( file )`
+
+Read contents of a file (either real or virtual) as a string.
+
+#### `[WRITE_FILE]( ext, content )`
+
+Write a virual file.
+
+File is recorded in virtual file system. The file's `.path` is an opaque pseudo-path, guaranteed to be unique. It will have the extension `ext`.
+
+Returns a `File` object. The contents of the file can be read with `[READ_FILE]()`.
+
+#### `[CREATE_VIRTUAL_PATH](ext)`
+
+Used internally by `[WRITE_FILE]()` to create pseudo-paths for virtual files.
+
+Can be extended by sub-classes/plugins to alter pseudo-paths created by `[WRITE_FILE]()`.
+
+### Properties
+
+#### `[FS_FILES]`
+
+The uppermost route using this plugin will have an `[FS_FILES]` property which is an object holding details of all virtual files. The object is keyed by path, and values are the corresponding `File` objects.
+
+All nested routes using this plugin will reference this same `[FS_FILES]` object as held on the uppermost route.
 
 ## Versioning
 
