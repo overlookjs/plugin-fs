@@ -15,5 +15,6 @@ export const {
 	WRITE_FILE,
 	CREATE_VIRTUAL_PATH,
 	FS_FILES,
-	File
+	File,
+	VIRTUAL_PATH_PREFIX
 } = fsPlugin;

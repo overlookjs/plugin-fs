@@ -12,10 +12,12 @@
 
 module.exports = function itExports(fsPlugin) {
 	describe('properties', () => {
-		it.each([
-			'File'
-		])('%s', (key) => {
-			expect(fsPlugin[key]).toBeFunction();
+		it('File', () => { // eslint-disable-line jest/lowercase-name
+			expect(fsPlugin.File).toBeFunction();
+		});
+
+		it('VIRTUAL_PATH_PREFIX', () => { // eslint-disable-line jest/lowercase-name
+			expect(fsPlugin.VIRTUAL_PATH_PREFIX).toBeString();
 		});
 	});
 
