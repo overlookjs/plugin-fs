@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@overlook/plugin": "^0.4.1",
-    "@overlook/route": "^0.6.4",
+    "@overlook/route": "^0.6.5",
     "@overlook/util-find-parent": "^0.1.0",
     "is-it-type": "^5.0.0",
     "simple-invariant": "^2.0.0"
