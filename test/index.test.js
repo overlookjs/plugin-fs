@@ -23,7 +23,6 @@ describe('Plugin', () => {
 	it('when passed to `Route.extend()`, returns subclass of Route', () => {
 		const FsRoute = Route.extend(fsPlugin);
 		expect(FsRoute).toBeFunction();
-		expect(Object.getPrototypeOf(FsRoute)).toBe(Route);
-		expect(Object.getPrototypeOf(FsRoute.prototype)).toBe(Route.prototype);
+		expect(FsRoute).toBeDirectSubclassOf(Route);
 	});
 });
